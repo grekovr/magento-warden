@@ -6,3 +6,4 @@ pub/static/
 pub/media/
 app/etc/env.php
 auth.json
+handoff.md
