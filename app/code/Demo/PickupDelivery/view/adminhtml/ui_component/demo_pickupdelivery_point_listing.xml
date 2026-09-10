@@ -11,9 +11,20 @@
     </argument>
 
     <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Point</label>
+            </button>
+        </buttons>
+
         <spinner>pickupdelivery_columns</spinner>
+
         <deps>
-            <dep>demo_pickupdelivery_point_listing.demo_pickupdelivery_point_listing_data_source</dep>
+            <dep>
+                demo_pickupdelivery_point_listing.demo_pickupdelivery_point_listing_data_source
+            </dep>
         </deps>
     </settings>
 
@@ -82,5 +93,14 @@
                 <filter>textRange</filter>
             </settings>
         </column>
+        <actionsColumn name="actions"
+                       class="Demo\PickupDelivery\Ui\Component\Listing\Column\Actions"
+                       component="Magento_Ui/js/grid/columns/actions"
+                       sortOrder="100">
+            <settings>
+                <indexField>entity_id</indexField>
+                <label translate="true">Actions</label>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>
