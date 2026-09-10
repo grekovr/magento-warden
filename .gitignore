@@ -7,3 +7,5 @@ pub/media/
 app/etc/env.php
 auth.json
 handoff.md
+.phpunit.result.cache
+/dev/tests/integration/tmp/

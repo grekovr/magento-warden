@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+
+    <menu>
+        <add id="Demo_PickupDelivery::pickup_points"
+             title="Pickup Points"
+             module="Demo_PickupDelivery"
+             sortOrder="20"
+             parent="Magento_Sales::sales"
+             action="demopickupdelivery/point/index"
+             resource="Demo_PickupDelivery::pickup_points"/>
+    </menu>
+</config>

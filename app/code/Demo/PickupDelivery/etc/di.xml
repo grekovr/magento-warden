@@ -10,4 +10,30 @@
         for="Demo\PickupDelivery\Api\Data\PointInterface"
         type="Demo\PickupDelivery\Model\Data\Point"/>
 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="demo_pickupdelivery_point_listing_data_source"
+                      xsi:type="string">
+                    Demo\PickupDelivery\Model\ResourceModel\Point\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Demo\PickupDelivery\Model\ResourceModel\Point\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">
+                demo_pickupdelivery_point
+            </argument>
+            <argument name="resourceModel" xsi:type="string">
+                Demo\PickupDelivery\Model\ResourceModel\Point
+            </argument>
+            <argument name="identifierName" xsi:type="string">
+                entity_id
+            </argument>
+        </arguments>
+    </virtualType>
+
 </config>
