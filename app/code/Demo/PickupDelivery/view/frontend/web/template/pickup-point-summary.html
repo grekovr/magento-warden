@@ -1,0 +1,10 @@
+<!-- ko if: isVisible() -->
+<div class="demo-pickup-point-summary">
+    <strong>
+        <!-- ko i18n: 'Pickup point' --><!-- /ko -->
+    </strong>
+
+    <div data-bind="text: selectedPoint().name"></div>
+    <div data-bind="text: selectedPoint().city + ', ' + selectedPoint().address"></div>
+</div>
+<!-- /ko -->

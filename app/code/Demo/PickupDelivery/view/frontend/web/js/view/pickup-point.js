@@ -1,8 +1,9 @@
 define([
     'uiComponent',
     'ko',
-    'Magento_Checkout/js/model/quote'
-], function (Component, ko, quote) {
+    'Magento_Checkout/js/model/quote',
+    'Demo_PickupDelivery/js/model/pickup-point'
+], function (Component, ko, quote, pickupPoint) {
     'use strict';
 
     return Component.extend({
@@ -16,7 +17,7 @@ define([
             var config = window.checkoutConfig.demoPickupDelivery || {};
 
             this.points = config.points || [];
-            this.selectedPoint = ko.observable('');
+            this.selectedPoint = pickupPoint.selectedPointId;
 
             this.isVisible = ko.pureComputed(function () {
                 var shippingMethod = quote.shippingMethod();

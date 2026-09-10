@@ -18,6 +18,18 @@ class LayoutProcessor
             'sortOrder' => 20,
         ];
 
+        $jsLayout['components']['checkout']['children']['sidebar']['children']
+        ['shipping-information']['config']['template'] =
+            'Demo_PickupDelivery/shipping-information';
+
+        $jsLayout['components']['checkout']['children']['sidebar']['children']
+        ['shipping-information']['children']
+        ['demo_pickup_point_summary'] = [
+            'component' => 'Demo_PickupDelivery/js/view/pickup-point-summary',
+            'displayArea' => 'shipping-additional',
+            'sortOrder' => 10,
+        ];
+
         return $jsLayout;
     }
 }

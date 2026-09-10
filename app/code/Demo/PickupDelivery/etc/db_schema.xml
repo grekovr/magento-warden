@@ -78,4 +78,78 @@
         </index>
 
     </table>
+
+    <table name="quote"
+           resource="checkout"
+           engine="innodb"
+           comment="Sales Flat Quote">
+
+        <column xsi:type="int"
+                name="pickup_point_id"
+                unsigned="true"
+                nullable="true"
+                comment="Pickup Point ID"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_code"
+                nullable="true"
+                length="64"
+                comment="Pickup Point Code"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_name"
+                nullable="true"
+                length="255"
+                comment="Pickup Point Name"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_city"
+                nullable="true"
+                length="100"
+                comment="Pickup Point City"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_address"
+                nullable="true"
+                length="255"
+                comment="Pickup Point Address"/>
+
+    </table>
+
+    <table name="sales_order"
+           resource="sales"
+           engine="innodb"
+           comment="Sales Flat Order">
+
+        <column xsi:type="int"
+                name="pickup_point_id"
+                unsigned="true"
+                nullable="true"
+                comment="Pickup Point ID"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_code"
+                nullable="true"
+                length="64"
+                comment="Pickup Point Code"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_name"
+                nullable="true"
+                length="255"
+                comment="Pickup Point Name"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_city"
+                nullable="true"
+                length="100"
+                comment="Pickup Point City"/>
+
+        <column xsi:type="varchar"
+                name="pickup_point_address"
+                nullable="true"
+                length="255"
+                comment="Pickup Point Address"/>
+
+    </table>
 </schema>

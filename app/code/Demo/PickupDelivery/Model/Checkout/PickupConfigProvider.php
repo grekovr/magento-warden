@@ -3,12 +3,14 @@
 namespace Demo\PickupDelivery\Model\Checkout;
 
 use Demo\PickupDelivery\Model\ResourceModel\Point\CollectionFactory;
+use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Checkout\Model\ConfigProviderInterface;
 
 class PickupConfigProvider implements ConfigProviderInterface
 {
     public function __construct(
-        private readonly CollectionFactory $collectionFactory
+        private readonly CollectionFactory $collectionFactory,
+        private readonly CheckoutSession $checkoutSession
     ) {
     }
 
@@ -33,6 +35,9 @@ class PickupConfigProvider implements ConfigProviderInterface
         return [
             'demoPickupDelivery' => [
                 'points' => $points,
+                'selectedPointId' => $this->checkoutSession
+                    ->getQuote()
+                    ->getData('pickup_point_id'),
             ],
         ];
     }

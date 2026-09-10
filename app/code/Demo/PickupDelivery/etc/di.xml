@@ -36,4 +36,8 @@
         </arguments>
     </virtualType>
 
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="demo_pickupdelivery_save_quote_snapshot"
+                type="Demo\PickupDelivery\Plugin\Checkout\ShippingInformationManagement"/>
+    </type>
 </config>
