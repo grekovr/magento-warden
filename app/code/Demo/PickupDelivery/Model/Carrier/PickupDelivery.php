@@ -2,6 +2,7 @@
 
 namespace Demo\PickupDelivery\Model\Carrier;
 
+use Demo\PickupDelivery\Model\ResourceModel\Point\CollectionFactory;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
@@ -23,6 +24,7 @@ class PickupDelivery extends AbstractCarrier implements CarrierInterface
         LoggerInterface $logger,
         private readonly ResultFactory $rateResultFactory,
         private readonly MethodFactory $rateMethodFactory,
+        private readonly CollectionFactory $collectionFactory,
         array $data = []
     ) {
         parent::__construct(
@@ -36,6 +38,13 @@ class PickupDelivery extends AbstractCarrier implements CarrierInterface
     public function collectRates(RateRequest $request)
     {
         if (!$this->getConfigFlag('active')) {
+            return false;
+        }
+
+        $collection = $this->collectionFactory->create();
+        $collection->addFieldToFilter('is_active', 1);
+
+        if (!$collection->getSize()) {
             return false;
         }
 
