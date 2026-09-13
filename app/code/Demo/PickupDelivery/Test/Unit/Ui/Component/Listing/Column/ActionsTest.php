@@ -2,7 +2,9 @@
 
 namespace Demo\PickupDelivery\Test\Unit\Ui\Component\Listing\Column;
 
+use Demo\PickupDelivery\Controller\Adminhtml\Point\Delete;
 use Demo\PickupDelivery\Ui\Component\Listing\Column\Actions;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -37,6 +39,11 @@ class ActionsTest extends TestCase
         $this->assertSame('/delete/3', $result['data']['items'][0]['actions']['delete']['href']);
         $this->assertSame('Edit', (string) $result['data']['items'][0]['actions']['edit']['label']);
         $this->assertSame('Delete', (string) $result['data']['items'][0]['actions']['delete']['label']);
+        $this->assertTrue($result['data']['items'][0]['actions']['delete']['post']);
         $this->assertArrayHasKey('confirm', $result['data']['items'][0]['actions']['delete']);
+        $this->assertContains(
+            HttpPostActionInterface::class,
+            class_implements(Delete::class)
+        );
     }
 }

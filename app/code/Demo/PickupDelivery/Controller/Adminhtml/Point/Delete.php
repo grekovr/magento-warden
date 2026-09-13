@@ -4,11 +4,12 @@ namespace Demo\PickupDelivery\Controller\Adminhtml\Point;
 
 use Demo\PickupDelivery\Api\PointRepositoryInterface;
 use Magento\Backend\App\Action;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Exception\LocalizedException;
 
-class Delete extends Action
+class Delete extends Action implements HttpPostActionInterface
 {
     public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points';
 

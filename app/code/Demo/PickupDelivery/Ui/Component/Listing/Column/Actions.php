@@ -40,6 +40,7 @@ class Actions extends Column
                             'demopickupdelivery/point/delete',
                             ['id' => $id]
                         ),
+                        'post' => true,
                         'label' => __('Delete'),
                         'confirm' => [
                             'title' => __('Delete pickup point'),
