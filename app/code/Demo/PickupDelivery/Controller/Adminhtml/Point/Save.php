@@ -11,7 +11,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Save extends Action
 {
-    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points';
+    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points_save';
 
     public function __construct(
         Action\Context $context,

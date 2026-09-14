@@ -8,7 +8,7 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Edit extends Action
 {
-    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points';
+    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points_view';
 
     public function __construct(
         Action\Context $context,

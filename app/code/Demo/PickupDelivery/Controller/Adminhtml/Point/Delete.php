@@ -11,7 +11,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Delete extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points';
+    public const ADMIN_RESOURCE = 'Demo_PickupDelivery::pickup_points_delete';
 
     public function __construct(
         Action\Context $context,

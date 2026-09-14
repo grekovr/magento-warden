@@ -9,6 +9,6 @@
              sortOrder="20"
              parent="Magento_Sales::sales"
              action="demopickupdelivery/point/index"
-             resource="Demo_PickupDelivery::pickup_points"/>
+             resource="Demo_PickupDelivery::pickup_points_view"/>
     </menu>
 </config>
