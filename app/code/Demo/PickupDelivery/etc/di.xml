@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference
+        for="Demo\PickupDelivery\Api\PointRepositoryInterface"
+        type="Demo\PickupDelivery\Model\PointRepository"/>
+
+    <preference
+        for="Demo\PickupDelivery\Api\Data\PointInterface"
+        type="Demo\PickupDelivery\Model\Data\Point"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="demo_pickupdelivery_point_listing_data_source"
+                      xsi:type="string">
+                    Demo\PickupDelivery\Model\ResourceModel\Point\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Demo\PickupDelivery\Model\ResourceModel\Point\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">
+                demo_pickupdelivery_point
+            </argument>
+            <argument name="resourceModel" xsi:type="string">
+                Demo\PickupDelivery\Model\ResourceModel\Point
+            </argument>
+            <argument name="identifierName" xsi:type="string">
+                entity_id
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="demo_pickupdelivery_save_quote_snapshot"
+                type="Demo\PickupDelivery\Plugin\Checkout\ShippingInformationManagement"/>
+    </type>
+</config>

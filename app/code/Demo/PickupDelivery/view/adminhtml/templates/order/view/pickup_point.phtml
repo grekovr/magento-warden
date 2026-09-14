@@ -1,0 +1,33 @@
+<?php
+/** @var \Demo\PickupDelivery\Block\Adminhtml\Order\View\PickupPoint $block */
+$order = $block->getOrder();
+?>
+
+<?php if ($order && $block->hasPickupPoint()) : ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Pickup Point')) ?></span>
+        </div>
+
+        <div class="admin__page-section-content">
+            <table class="admin__table-secondary">
+                <tr>
+                    <th><?= $block->escapeHtml(__('Code')) ?></th>
+                    <td><?= $block->escapeHtml($order->getData('pickup_point_code')) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Name')) ?></th>
+                    <td><?= $block->escapeHtml($order->getData('pickup_point_name')) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('City')) ?></th>
+                    <td><?= $block->escapeHtml($order->getData('pickup_point_city')) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Address')) ?></th>
+                    <td><?= $block->escapeHtml($order->getData('pickup_point_address')) ?></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+<?php endif; ?>

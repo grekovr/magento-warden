@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="order_additional_info">
+            <block class="Demo\PickupDelivery\Block\Adminhtml\Order\View\PickupPoint"
+                   name="demo_pickupdelivery_order_pickup_point"
+                   template="Demo_PickupDelivery::order/view/pickup_point.phtml"/>
+        </referenceContainer>
+    </body>
+
+</page>

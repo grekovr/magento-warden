@@ -1,0 +1,18 @@
+<!-- ko if: isVisible() -->
+<div class="demo-pickup-point">
+    <label for="demo-pickup-point-select">
+        <!-- ko i18n: 'Pickup point' --><!-- /ko -->
+    </label>
+
+    <select id="demo-pickup-point-select"
+            data-bind="value: selectedPoint">
+        <option value="">
+            <!-- ko i18n: 'Select a pickup point' --><!-- /ko -->
+        </option>
+
+        <!-- ko foreach: points -->
+        <option data-bind="value: id, text: name + ' — ' + city + ', ' + address"></option>
+        <!-- /ko -->
+    </select>
+</div>
+<!-- /ko -->
