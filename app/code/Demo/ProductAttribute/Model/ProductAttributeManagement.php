@@ -141,7 +141,7 @@ class ProductAttributeManagement implements ProductAttributeManagementInterface
 
         $this->eavAttributeSet->addSetInfo(
             Product::ENTITY,
-            [$attributeCode],
+            [$attribute],
             $attributeSetId,
         );
         if (!$attribute->isInSet($attributeSetId)) {
