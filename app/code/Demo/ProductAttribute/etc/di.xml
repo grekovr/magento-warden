@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference
+        for="Demo\ProductAttribute\Api\ProductAttributeManagementInterface"
+        type="Demo\ProductAttribute\Model\ProductAttributeManagement"/>
+
+    <preference
+        for="Demo\ProductAttribute\Api\Data\ProductAttributeInterface"
+        type="Demo\ProductAttribute\Model\Data\ProductAttribute"/>
+
+</config>

@@ -379,6 +379,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'Demo_PickupDelivery' => 1,
+        'Demo_ProductAttribute' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,
         'PayPal_BraintreeGiftCard' => 1,
